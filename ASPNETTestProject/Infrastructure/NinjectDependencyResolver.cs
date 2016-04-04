@@ -31,9 +31,9 @@ namespace ASPNETTestProject.Infrastructure
             // put bindings here
             Mock<IPortfolioRepository> mock = new Mock<IPortfolioRepository>();
             mock.Setup(m => m.Portfolios).Returns(new List<Portfolio> {
-                new Portfolio { Name = "A", Description="test" },
-                new Portfolio { Name = "B", Description="blabla" },
-                new Portfolio { Name = "C", Description="this is c" }
+                new Portfolio { Name = "A", Description="Portfolio A in USD" },
+                new Portfolio { Name = "B", Description="Portfolio B in CHF" },
+                new Portfolio { Name = "C", Description="Portfolio C in EUR" }
                 });
             kernel.Bind<IPortfolioRepository>().ToConstant(mock.Object);
         }
